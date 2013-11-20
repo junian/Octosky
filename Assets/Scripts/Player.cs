@@ -17,5 +17,17 @@ public class Player : MonoBehaviour {
 
 		movement = movement * Time.deltaTime;
 		transform.Translate(movement);
+
+		bool shoot = Input.GetButtonDown("Fire1");
+		shoot |= Input.GetButtonDown("Fire2");
+
+		if(shoot)
+		{
+			Weapon weapon = GetComponent<Weapon>();
+			if(weapon!=null)
+			{
+				weapon.Attack(false);
+			}
+		}
 	}
 }
