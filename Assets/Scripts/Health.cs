@@ -23,12 +23,33 @@ public class Health : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(!isEnemy)
+		{
+			Enemy enemy = collision.collider.gameObject.GetComponent<Enemy>();
+			if(enemy != null)
+			{
+				hp = Mathf.Max(0, hp - enemy.touchDamage);
+				if(hp <= 0)
+				{
+					Destroy(gameObject);
+				}
+			}
+			return;
+		}
+	}
+
 	void OnGUI()
 	{
 		if(isEnemy)
-			GUI.Box (new Rect (Screen.width - 100,0,100,50), "HP: " + hp);
+		{
+			//GUI.Box (new Rect (Screen.width - 100,0,100,50), "HP: " + hp);
+		}
 		else
+		{
 			GUI.Box (new Rect (0,0,100,50), "HP: " + hp);
+		}
 	}
 
 	// Use this for initialization

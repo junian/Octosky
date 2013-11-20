@@ -652,6 +652,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 66b7a1f7183d04eaeb66e22a920b58fb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66b7a1f7183d04eaeb66e22a920b58fb, type: 2}
   m_RootGameObject: {fileID: 1681619421}
@@ -790,13 +794,14 @@ GameObject:
   - 50: {fileID: 1681619425}
   - 58: {fileID: 1681619424}
   - 114: {fileID: 1681619427}
+  - 114: {fileID: 1681619428}
   m_Layer: 0
   m_Name: Enemy Poulpi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1681619422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -887,6 +892,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   isEnemy: 1
+--- !u!114 &1681619428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681619421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18466d154c61b47fc9bd4fb7b982acb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchDamage: 1
 --- !u!1001 &1893291193
 Prefab:
   m_ObjectHideFlags: 0
@@ -927,6 +944,49 @@ Prefab:
   m_RootGameObject: {fileID: 1968236846}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1911188741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1911188743}
+  - 114: {fileID: 1911188742}
+  m_Layer: 0
+  m_Name: Enemy Wave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1911188742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911188741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d813c4179e4483bb23f714ff23203d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 100000, guid: 66b7a1f7183d04eaeb66e22a920b58fb, type: 2}
+  minEnemy: 1
+  maxEnemy: 3
+  randomRange: {x: 5, y: 5}
+  spawnTime: 1
+--- !u!4 &1911188743
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911188741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1936162049
 GameObject:
   m_ObjectHideFlags: 0
