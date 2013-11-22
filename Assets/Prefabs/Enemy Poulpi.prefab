@@ -14,7 +14,6 @@ GameObject:
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  - 114: {fileID: 11400006}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400014}
   m_Layer: 0
@@ -156,19 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   isEnemy: 1
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fda01a21dd19472a87a234fece4f6d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 100000, guid: 56a0564589cc04451b5e60803e527f10, type: 2}
-  shootingRate: 1
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

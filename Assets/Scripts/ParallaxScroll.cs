@@ -12,13 +12,16 @@ public class ParallaxScroll : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		backgroundPart = new List<Transform>();
-		for(int i=0; i< transform.childCount;i++)
+		if(isLooping)
 		{
-			Transform child = transform.GetChild(i);
-			if(child.renderer != null)
+			backgroundPart = new List<Transform>();
+			for(int i=0; i< transform.childCount;i++)
 			{
-				backgroundPart.Add(child);
+				Transform child = transform.GetChild(i);
+				if(child.renderer != null)
+				{
+					backgroundPart.Add(child);
+				}
 			}
 			backgroundPart = backgroundPart.OrderBy(t => t.position.x).ToList();
 		}
@@ -44,17 +47,21 @@ public class ParallaxScroll : MonoBehaviour {
 			Transform firstChild = backgroundPart.FirstOrDefault();
 			if(firstChild != null)
 			{
-				if(!firstChild.renderer.IsVisibleFrom(Camera.main))
+				if(firstChild.position.x < Camera.main.transform.position.x)
 				{
-					Transform lastChild = backgroundPart.LastOrDefault();
-					Vector3 lastPosition = lastChild.position;
-					Vector3 lastSize = lastChild.renderer.bounds.max - lastChild.renderer.bounds.min;
+					if(!firstChild.renderer.IsVisibleFrom(Camera.main))
+					{
+						Transform lastChild = backgroundPart.LastOrDefault();
+						Vector3 lastPosition = lastChild.transform.position;
+						Vector3 lastSize = lastChild.renderer.bounds.max - lastChild.renderer.bounds.min;
 
-					firstChild.position = new Vector3(lastPosition.x + lastSize.x,
-					                                  firstChild.position.y,
-					                                  firstChild.position.z);
-					backgroundPart.Remove(firstChild);
-					backgroundPart.Add(firstChild);
+						firstChild.position = new Vector3(lastPosition.x + lastSize.x,
+						                                  firstChild.position.y,
+						                                  firstChild.position.z);
+
+						backgroundPart.Remove(firstChild);
+						backgroundPart.Add(firstChild);
+					}
 				}
 			}
 		}
