@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   isEnemy: 1
+  particle: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   isEnemy: 1
+  particle: {fileID: 100000, guid: 2c278640ef9254ae59689e4645ef345e, type: 2}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,9 +4,13 @@ using System.Collections;
 public class Health : MonoBehaviour {
 	public int hp = 100;
 	public bool isEnemy = true;
+	public GameObject particle;
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
+		if(!this.renderer.IsVisibleFrom(Camera.main))
+		   return;
+
 		Bullet bullet = collider.gameObject.GetComponent<Bullet>();
 		if(bullet != null)
 		{
@@ -16,6 +20,13 @@ public class Health : MonoBehaviour {
 				Destroy(bullet.gameObject);
 				if(hp <= 0)
 				{
+					if(particle != null)
+					{
+						GameObject part = (GameObject) Instantiate(particle, transform.position, Quaternion.identity);
+						var p = part.GetComponent<ParticleSystem>();
+						Destroy(part, p.startLifetime);
+					}
+
 					Destroy(gameObject);
 				}
 			}
@@ -33,6 +44,13 @@ public class Health : MonoBehaviour {
 				hp = Mathf.Max(0, hp - enemy.touchDamage);
 				if(hp <= 0)
 				{
+					if(particle != null)
+					{
+						GameObject part = (GameObject) Instantiate(particle, transform.position, Quaternion.identity);
+						var p = part.GetComponent<ParticleSystem>();
+						Destroy(part, p.startLifetime);
+					}
+
 					Destroy(gameObject);
 				}
 			}
