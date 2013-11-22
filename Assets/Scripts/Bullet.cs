@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Destroy(gameObject, 20);
+		Destroy(gameObject, 10.0f);
 	}
 	
 	// Update is called once per frame

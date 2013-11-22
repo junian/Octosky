@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
 
 		bool shoot = Input.GetButtonDown("Fire1");
 		shoot |= Input.GetButtonDown("Fire2");
+		shoot |= Input.touchCount > 0;
 
 		if(shoot)
 		{

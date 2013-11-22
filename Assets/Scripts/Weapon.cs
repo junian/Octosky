@@ -44,8 +44,10 @@ public class Weapon : MonoBehaviour {
 			LinearMove move = objBullet.GetComponent<LinearMove>();
 			if(move != null)
 			{
-				if(!isEnemy)
+				//if(!isEnemy)
 					move.direction = this.transform.right;
+				//else
+					//move.direction = -this.transform.right;
 
 			}
 		}
