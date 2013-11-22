@@ -793,6 +793,8 @@ GameObject:
   - 114: {fileID: 1681619426}
   - 50: {fileID: 1681619425}
   - 58: {fileID: 1681619424}
+  - 114: {fileID: 1681619429}
+  - 114: {fileID: 1681619430}
   - 114: {fileID: 1681619427}
   - 114: {fileID: 1681619428}
   m_Layer: 0
@@ -904,6 +906,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchDamage: 1
+--- !u!114 &1681619429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 66b7a1f7183d04eaeb66e22a920b58fb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1098251858}
+  m_GameObject: {fileID: 1681619421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18466d154c61b47fc9bd4fb7b982acb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchDamage: 1
+--- !u!114 &1681619430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 66b7a1f7183d04eaeb66e22a920b58fb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1098251858}
+  m_GameObject: {fileID: 1681619421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d849ba00285794f3d8851367ba7df365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 30
+  isEnemy: 1
 --- !u!1001 &1893291193
 Prefab:
   m_ObjectHideFlags: 0
