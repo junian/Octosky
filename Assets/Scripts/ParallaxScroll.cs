@@ -41,6 +41,22 @@ public class ParallaxScroll : MonoBehaviour {
 
 		if(isLooping)
 		{
+			Transform firstChild = backgroundPart.FirstOrDefault();
+			if(firstChild != null)
+			{
+				if(!firstChild.renderer.IsVisibleFrom(Camera.main))
+				{
+					Transform lastChild = backgroundPart.LastOrDefault();
+					Vector3 lastPosition = lastChild.position;
+					Vector3 lastSize = lastChild.renderer.bounds.max - lastChild.renderer.bounds.min;
+
+					firstChild.position = new Vector3(lastPosition.x + lastSize.x,
+					                                  firstChild.position.y,
+					                                  firstChild.position.z);
+					backgroundPart.Remove(firstChild);
+					backgroundPart.Add(firstChild);
+				}
+			}
 		}
 	
 	}
