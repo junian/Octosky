@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 1, y: 1}
   direction: {x: 1, y: 0}
-  isLinkedToCamera: 0
+  isLinkedToCamera: 1
   isLooping: 0
 --- !u!1 &1373402565
 GameObject:
