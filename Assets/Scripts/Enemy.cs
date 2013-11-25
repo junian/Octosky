@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour {
 		{
 			foreach(var w in weapon)
 				w.Attack(true);
+			SfxPlayer.Instance.MakeEnemyShotSound();
 		}
 
 		var dist = (transform.position - Camera.main.transform.position).z;

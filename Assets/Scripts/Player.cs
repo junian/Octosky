@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
 			if(weapon!=null)
 			{
 				weapon.Attack(false);
+				SfxPlayer.Instance.MakePlayerShotSound();
 			}
 		}
 

@@ -27,6 +27,8 @@ public class Health : MonoBehaviour {
 						Destroy(part, p.startLifetime);
 					}
 
+					SfxPlayer.Instance.MakeExplosionSound();
+
 					Destroy(gameObject);
 				}
 			}
