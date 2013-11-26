@@ -3,9 +3,9 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 
-public class TagClassGenerator : EditorWindow {
+public class TagEnumerator : EditorWindow {
 
-	[MenuItem ("Junian.Net/Generate Tag Class")]
+	[MenuItem ("Junian.Net/Enumerate Tags")]
 	static void Init () {
 		#if UNITY_EDITOR
 		string path = EditorUtility.SaveFilePanelInProject("Save Tag Class", "Tags", "cs", "Select save file path");

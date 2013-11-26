@@ -49,4 +49,9 @@ public class Player : MonoBehaviour {
 			Mathf.Clamp(transform.position.y, topBorder, bottomBorder),
 			transform.position.z);
 	}
+
+	void OnDestroy()
+	{
+		transform.parent.gameObject.AddComponent<GameOverHandler>();
+	}
 }
