@@ -1084,6 +1084,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 911042529}
   - 114: {fileID: 911042528}
+  - 114: {fileID: 911042530}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -1116,6 +1117,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &911042530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911042527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b37b2a821c34593b18bed95a1de7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1001 &916566647
 Prefab:
   m_ObjectHideFlags: 0
@@ -2896,7 +2909,6 @@ GameObject:
   - 58: {fileID: 1681619424}
   - 114: {fileID: 1681619429}
   - 114: {fileID: 1681619430}
-  - 114: {fileID: 1681619427}
   - 114: {fileID: 1681619428}
   m_Layer: 0
   m_Name: Enemy Poulpi
@@ -2984,21 +2996,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 10, y: 10}
   direction: {x: -1, y: 0}
---- !u!114 &1681619427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400012, guid: 66b7a1f7183d04eaeb66e22a920b58fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 128056228}
-  m_GameObject: {fileID: 1681619421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d849ba00285794f3d8851367ba7df365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 30
-  isEnemy: 1
-  particle: {fileID: 100000, guid: 2c278640ef9254ae59689e4645ef345e, type: 2}
 --- !u!114 &1681619428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3041,7 +3038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 30
   isEnemy: 1
-  particle: {fileID: 0}
+  particle: {fileID: 100000, guid: 2c278640ef9254ae59689e4645ef345e, type: 2}
 --- !u!1 &1843931347
 GameObject:
   m_ObjectHideFlags: 0

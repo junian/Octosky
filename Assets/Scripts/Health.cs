@@ -29,6 +29,11 @@ public class Health : MonoBehaviour {
 
 					SfxPlayer.Instance.MakeExplosionSound();
 
+					if(isEnemy)
+					{
+						Score.Instance.score += 10;
+					}
+
 					Destroy(gameObject);
 				}
 			}
@@ -70,15 +75,5 @@ public class Health : MonoBehaviour {
 		{
 			GUI.Box (new Rect (0,0,100,50), "HP: " + hp);
 		}
-	}
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
