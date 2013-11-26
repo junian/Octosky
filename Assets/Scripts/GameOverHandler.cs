@@ -14,7 +14,7 @@ public class GameOverHandler : MonoBehaviour {
 		         buttonWidth,
 		         buttonHeight), "Play Again!"))
 		{
-			Application.LoadLevel("Game");
+			Application.LoadLevel(Scenes.Game);
 		}
 
 		if(GUI.Button(
@@ -23,7 +23,7 @@ public class GameOverHandler : MonoBehaviour {
 		         buttonWidth,
 		         buttonHeight), "Main Menu"))
 		{
-			Application.LoadLevel("Menu");
+			Application.LoadLevel(Scenes.Menu);
 		}
 	}
 }

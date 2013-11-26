@@ -3,11 +3,18 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
+	private GUISkin skin;
+
+	void Start()
+	{
+		skin = Resources.Load<GUISkin>("GUISkin");
+	}
+
 	void OnGUI()
 	{
 		const int buttonWidth = 84;
 		const int buttonHeight = 60;
-
+		GUI.skin = skin;
 		if(GUI.Button(
 			new Rect(
 				(Screen.width - buttonWidth) / 2.0f, 
@@ -16,7 +23,7 @@ public class MainMenu : MonoBehaviour {
 		         buttonHeight),
 			"Begin!"))
 		{
-			Application.LoadLevel("Game");
+			Application.LoadLevel(Scenes.Game);
 		}
 	}
 }
