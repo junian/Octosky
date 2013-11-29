@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using Facebook.MiniJSON;
 
 public class MainMenu : MonoBehaviour {
 
@@ -42,6 +43,14 @@ public class MainMenu : MonoBehaviour {
 	void OnFBLoggedIn()
 	{
 		FbDebug.Log("Logged in. ID: " + FB.UserId); 
+
+		FB.API("/me?fields=id,name", Facebook.HttpMethod.GET, (result) =>
+		       {
+					if(result.Error != null)
+						return;
+					Dictionary<string, object> dict = (Dictionary<string, object>) Json.Deserialize(result.Text);
+					GamePref.Username = dict["name"].ToString();
+				});
 	}
 
 	void Awake()
@@ -68,6 +77,7 @@ public class MainMenu : MonoBehaviour {
 		//GUI.skin = skin;
 		if(FB.IsLoggedIn)
 		{
+			GUI.Label(new Rect(0,0,100,100), "Hello, " + GamePref.Username);
 			if(GUI.Button(
 				rect,
 				"Begin!"))
